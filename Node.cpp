@@ -1,44 +1,44 @@
 #include "Node.hpp"
 
-template <typename Node>
-int nodik<Node>::get_data()
+template <typename list>
+list nodik<list>::get_data()
 {
     return data;
 }
 
-template <typename Node>
-nodik<Node>* nodik<Node>::get_node()
+template <typename list>
+nodik<list>* nodik<list>::get_node()
 {
     return next;
 }
 
-template <typename Node>
-void nodik<Node>::set_data(int d_)
+template <typename list>
+void nodik<list>::set_data(list d_)
 {
     data = d_;
 }
 
-template <typename Node>
-void nodik<Node>::set_node(const nodik<Node>* n_)
+template <typename list>
+void nodik<list>::set_node(nodik<list>* n_)
 {
-    next = const_cast<nodik<Node>*>(n_);
+    next = n_;
 }
 
-template <typename Node>
-nodik<Node>::nodik() {}
+template <typename list>
+nodik<list>::nodik() {}
 
-template <typename Node>
-nodik<Node>::~nodik() {}
+template <typename list>
+nodik<list>::~nodik() {}
 
-template <typename Node>
-nodik<Node>::nodik(const nodik<Node>* obj)
+template <typename list>
+nodik<list>::nodik(const nodik<list>* obj)
 {
     data = obj->data;
     next = obj->next;
 }
 
-template <typename Node>
-nodik<Node>& nodik<Node>::operator=(const nodik<Node>* obj)
+template <typename list>
+nodik<list>& nodik<list>::operator=(const nodik<list>* obj)
 {
     if (this != obj)
     {

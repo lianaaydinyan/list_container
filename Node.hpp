@@ -3,22 +3,22 @@
 
 #include <iostream>
 
-template <typename Node>
+template <typename list>
 class nodik
 {
-    private:
-        nodik<Node> *next;
-        int   data;
-    public:
-        nodik(int d_,  nodik<Node>* n_) : data(d_), next(n_) {}
-        int     get_data();
-        nodik*  get_node();
-        void    set_data(int d_);
-        void    set_node(const nodik<Node>* n_);
-        nodik();
-        ~nodik();
-        nodik(const nodik<Node>* obj);
-        nodik& operator=(const nodik<Node>* obj); 
+private:
+public:
+    nodik<list>* next;
+    list data;
+    nodik(list d_, nodik<list>* n_) : data(d_), next(n_) {}
+    list get_data();
+    nodik<list>* get_node();
+    void set_data(list d_);
+    void set_node(nodik<list>* n_);
+    nodik();
+    ~nodik();
+    nodik(const nodik<list>* obj);
+    nodik& operator=(const nodik<list>* obj);
 };
 
 template class nodik<int>;
