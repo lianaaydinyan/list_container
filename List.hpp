@@ -17,6 +17,8 @@ public:
     void add_node(nodik<list>* node);
     list pop_front();
     void push_front(list val);
+    int findn_pos(nodik<list>* node, const list& n); // find n and return  its pos
+    void rotate_linked_list(nodik<list>* node); // rottate list
 };
 
 template class My_list<int>;

@@ -63,3 +63,32 @@ void My_list<list>::push_front(list val)
     new_node->next = head;
     head = new_node;
 }
+
+template <typename list>
+void My_list<list>::rotate_linked_list(nodik<list>* node)
+{
+    if (node == nullptr || node->next == nullptr)
+        return;
+    
+    nodik<list>* last = node;
+    while (last->next != nullptr)
+    {
+        last = last->next;
+    }
+    last->next = node;
+    head = node->next;
+    node->next = nullptr;
+}
+
+template <typename list>
+int My_list<list>::findn_pos(nodik<list>* node, const list& n) {
+    int pos = 0;
+    while (node != nullptr)
+    {
+        if (node->data == n)
+            return pos;
+        node = node->next;
+        pos++;
+    }
+    return -1;
+}

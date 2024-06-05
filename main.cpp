@@ -25,10 +25,19 @@ int main()
     
     my_list.push_front(40);
     current = my_list.get_node();
+    nodik<int>* current2 = my_list.get_node();
     while (current != nullptr)
     {
         my_list.print_data(current);
         current = current->next;
+    }
+    std::cout << "--------------rotated------------------" <<std::endl;
+    my_list.rotate_linked_list(current2);
+    nodik<int>* tmp = my_list.get_node();
+    while (tmp != nullptr)
+    {
+        my_list.print_data(tmp);
+        tmp = tmp->next;
     }
     return 0;
 }
